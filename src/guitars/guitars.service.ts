@@ -15,7 +15,7 @@ export class GuitarsService {
 
   }
 
-  deleteGuitar(id: number){
+  deleteGuitar(id: string){
       
   }
 
