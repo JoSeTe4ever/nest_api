@@ -1,4 +1,4 @@
-interface GuitarDto {
+export interface Guitar {
     id: string,
     brand: string, 
     name: string, 

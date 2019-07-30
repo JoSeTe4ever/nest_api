@@ -8,6 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { GuitarsService } from './guitars.service';
+import { Guitar } from './models/guitar';
 
 @Controller('guitars')
 export class GuitarsController {
@@ -20,24 +21,21 @@ export class GuitarsController {
 
   @Get(':id')
   getProduct(@Param() params) {
-    return this.guitarService.getGuitars().filter(p => p.id == params.id);
+    return this.guitarService.getGuitars();
   }
 
   @Post()
-  createProduct(@Body() guitar: GuitarDto) {
-    console.log('create product', guitar);
+  createProduct(@Body() guitar: Guitar) {
     this.guitarService.createGuitar(guitar);
   }
 
   @Put()
-  updateProduct(@Body() guitar: GuitarDto) {
-    console.log('update product', guitar);
+  updateProduct(@Body() guitar: Guitar) {
     this.guitarService.updateGuitar(guitar);
   }
 
   @Delete()
-  deleteProduct(@Body() guitar: GuitarDto) {
-    console.log('delete product', guitar.id);
+  deleteProduct(@Body() guitar: Guitar) {
     this.guitarService.deleteGuitar(guitar.id);
   }
 }
