@@ -7,7 +7,7 @@ import { GuitarsModule } from './guitars/guitars.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [GuitarsModule, MongooseModule.forRoot('mongodb://localhost/nest')],
+  imports: [GuitarsModule, MongooseModule.forRoot('mongodb://mongo/nest')],
   controllers: [AppController],
   providers: [AppService],
 })
